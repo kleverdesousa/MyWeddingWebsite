@@ -739,38 +739,40 @@
             <div class="col-lg-7 well">
                <div id="rsvp_form">
                   <div class="form-group text-center">
-                     <!-- name field-->
-                     <h5>Nome <span class="required">(Como no convite)*</span></h5>
-                     <input type="text" name="name" class="form-control input-field" required="">  
-                     <!-- checkbox attending-->
-                     <input id="yes" type="radio" value="Aceitar com prazer" name="attending"  />
-                     <label for="yes" class="side-label">Aceitar com prazer</label>
-                     <input id="no" type="radio" value="Recusar com pesar" name="attending" />
-                     <label for="no" class="side-label">Recusar com pesar</label>
-                     <!-- if attending=yes then the form bellow will show -->
-                     <div class="accept-form">
-                        <!-- guests checkbox -->
-                        <h5>Are you bringing guests?<span class="required">*</span></h5>
-                        <input id="bringing-guests" type="radio" value="yes" name="guest" /><label for="bringing-guests" class="side-label">Yes</label>
-                        <input type="radio" id="just-me" value="no" name="guest" /><label for="just-me" class="side-label">No</label><br>
-                        <!-- guest name text field-->
-                        <div id="guest-name">
-                           <h5>Guest Names</h5>
-                           <input type="text" name="guests" class="form-control input-field"> 
-                        </div>
-                        <!--/guest-name -->
-                     </div>
-                     <!--/accept form -->
-                     <!-- if attending=no then only the message box will show -->
-                     <div class="message-comments">
-                        <h5>Messagem para o casal</h5>
-                        <textarea name="message" id="message-box" class="textarea-field form-control" rows="3" ></textarea>
-                     </div>
-                     <!--/message-comments -->
-                     <div class="text-center">
-                        <button type="submit" id="submit_rsvp" value="Submit" class="btn">Enviar</button>
-                     </div>
-                     <!-- /col-md-12 -->
+                    <form method="post" action="https://formspree.io/user@example.com">
+                      <!-- name field-->
+                      <h5>Nome <span class="required">(Como no convite)*</span></h5>
+                      <input type="text" name="name" class="form-control input-field" required="">
+                      <!-- checkbox attending-->
+                      <input id="yes" type="radio" value="Aceitar com prazer" name="attending"  />
+                      <label for="yes" class="side-label">Aceitar com prazer</label>
+                      <input id="no" type="radio" value="Recusar com pesar" name="attending" />
+                      <label for="no" class="side-label">Recusar com pesar</label>
+                      <!-- if attending=yes then the form bellow will show -->
+                      <div class="accept-form">
+                          <!-- guests checkbox -->
+                          <h5>Are you bringing guests?<span class="required">*</span></h5>
+                          <input id="bringing-guests" type="radio" value="yes" name="guest" /><label for="bringing-guests" class="side-label">Yes</label>
+                          <input type="radio" id="just-me" value="no" name="guest" /><label for="just-me" class="side-label">No</label><br>
+                          <!-- guest name text field-->
+                          <div id="guest-name">
+                            <h5>Guest Names</h5>
+                            <input type="text" name="guests" class="form-control input-field">
+                          </div>
+                          <!--/guest-name -->
+                      </div>
+                      <!--/accept form -->
+                      <!-- if attending=no then only the message box will show -->
+                      <div class="message-comments">
+                          <h5>Messagem para o casal</h5>
+                          <textarea name="message" id="message-box" class="textarea-field form-control" rows="3" ></textarea>
+                      </div>
+                      <!--/message-comments -->
+                      <div class="text-center">
+                          <button type="submit" id="submit_rsvp" value="Submit" class="btn">Enviar</button>
+                      </div>
+                      <!-- /col-md-12 -->
+                    </form>
                   </div>
                   <!-- /Form-group -->
                   <!-- Contact results -->
