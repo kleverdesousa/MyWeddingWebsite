@@ -1,0 +1,24 @@
+{
+  "name": "klever-karol",
+  "version": "1.0.0",
+  "description": "My wedding website",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": "Kleverson PEREIRA",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "helmet": "^3.9.0",
+    "method-override": "^2.3.10",
+    "random-js": "^1.0.8",
+    "redis": "^2.8.0",
+    "redis-mass": "^0.3.0",
+    "sendgrid": "^5.2.3",
+    "string": "^3.3.3"
+  }
+}
