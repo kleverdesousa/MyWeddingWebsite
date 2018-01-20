@@ -30,7 +30,7 @@ app.use(helmet());
 app.disable('x-powered-by');
 
 // Create redis client
-let client = redis.createClient();
+let client = redis.createClient(process.env.REDIS_URL);
 client.on('connect', function () {
     console.log('Connected to redis...');
 });
