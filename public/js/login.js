@@ -34,9 +34,9 @@
        
         if (proceed) {
             var infos;
-            $.getJSON("https://freegeoip.net/json/?callback=?", function (data) {
+            $.get("https://freegeoip.net/json/?callback=?", function (data) {
                 infos = data;
-            }).then(function () {
+            }, "json").done(function () {
                 var output,
                     post_data = {
                         'id': $('#sb input[name=email]').val(),
