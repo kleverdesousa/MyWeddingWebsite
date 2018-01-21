@@ -44,11 +44,15 @@ var search = function (aName) {
         if (!aRes.err) {
             obj = JSON.parse(aRes);
         } else {
+            delInfo();
+            arrUsers = [];
             var output = '<div class="alert alert-danger fade in">' + _('Oups, houve um problema. Tente novamente.') + '<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a></div>';
             $("#contact_results").append(output).slideDown();
         }
     }).done(function () {
         if (obj.noObj) {
+            delInfo();
+            arrUsers = [];
             var output = '<div class="alert alert-danger fade in">' + _('Oups, não lhe encontramos na lista. Vérifique seu nome e tente novamente.') + '<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a></div>';
             $("#contact_results").append(output).slideDown();
         } else
