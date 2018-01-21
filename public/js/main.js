@@ -16,7 +16,7 @@ function loadLang(aPath) {
         if (response.redirect)
             window.location = response.redirect
         else if (response.error) {
-            output = '<div class="alert alert-danger fade in">' + response.error + '<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a></div>';
+            output = '<div class="alert alert-danger fade in">' + response.error + '<a href="#" class="close" data-dismiss="alert" aria-label="close">Ã—</a></div>';
             $("#lgForm").append(output).slideDown();
         }
     }, 'json');
@@ -25,11 +25,11 @@ function loadLang(aPath) {
 var _ = function (aText) {
     var dic = [];
 
-    dic['Oups, não lhe encontramos na lista. Vérifique seu nome e tente novamente.'] = 'Oups, nous ne vous trouvons pas dans la liste. Vérifiez l\'orthographe.';
-    dic['Oups, houve um problema. Tente novamente.'] = 'Oups, il y a un problème. Essayer à nouveau.';
+    dic['Oups, nÃ£o lhe encontramos na lista. VÃ©rifique seu nome e tente novamente.'] = 'Oups, nous ne vous trouvons pas dans la liste. VÃ©rifiez l\'orthographe.';
+    dic['Oups, houve um problema. Tente novamente.'] = 'Oups, il y a un problÃ¨me. Essayer Ã  nouveau.';
     dic['Aceitar com prazer'] = 'Oui, avec joie';
     dic['Recusar com pesar'] = 'Non, mais c\'est avec regret';
-    dic['Crianças'] = 'Enfants';
+    dic['CrianÃ§as'] = 'Enfants';
 
     if (lang == "fr")
         return dic[aText]
