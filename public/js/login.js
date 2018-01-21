@@ -34,7 +34,7 @@
        
         if (proceed) {
             var infos;
-            $.get("https://freegeoip.net/json/?callback=?", function (data) {
+            $.get("https://freegeoip.net/json/", function (data) {
                 infos = data;
             }, "json").done(function () {
                 var output,
