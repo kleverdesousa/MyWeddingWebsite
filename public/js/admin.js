@@ -71,7 +71,7 @@
                 html += (aGuest.linked) ? "<td>" + aGuest.linked + "</td>" : "<td></td>";
                 if (aGuest.status) {
                     totalAnswer++;
-                    if (aGuest.status == _('Aceitar com prazer'))
+                    if (aGuest.status == 'Aceitar com prazer' || aGuest.status == 'Oui, avec joie')
                         totalConfirmed++;
                     html += "<td>" + aGuest.status + "</td>";
                 } else

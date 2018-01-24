@@ -35,7 +35,7 @@ var _ = function (aText) {
 				return false;
 		} else if (typeof aValue == "boolean")
 			return false;
-		else if (aValue == "" || aValue == sNull)
+		else if (aValue == "")
 			return true;
 		else
 			return false;
@@ -53,8 +53,11 @@ var _ = function (aText) {
 	
    if (aText == null) 
         return;
-
-    return getValue(dic[aText],aText);
+	
+	if (lang == "fr")
+		return getValue(dic[aText],aText)
+	else 
+		return aText;
 }
 
 $(document).ready(function() {
