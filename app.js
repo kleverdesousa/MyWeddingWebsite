@@ -364,7 +364,7 @@ app.get('/admin/data', function (req, res, next) {
         if (obj) {
             var getAllAndPushFct = obj.map(function (aIdUser) {
                 usersKeys.push(aIdUser);
-                if (aIdUser != process.env.ADMINA_EMAIL || process.env.ADMINB_EMAIL) {
+                if (aIdUser != process.env.ADMINA_EMAIL && aIdUser != process.env.ADMINB_EMAIL) {
                     return hgetallAsync(aIdUser).then(function (hobj) {
                         if (hobj) {
                             if(hobj.infos != "" && hobj.infos != "no infos"){
@@ -379,9 +379,7 @@ app.get('/admin/data', function (req, res, next) {
                             };
                             hobj.id = aIdUser;
                             data.users.push(hobj);
-                        } else {
-                            res.send(data);
-                        }
+                        };
                     });
                 };
             });
