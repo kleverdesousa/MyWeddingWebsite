@@ -24,17 +24,37 @@ function loadLang(aPath) {
 
 var _ = function (aText) {
     var dic = [];
+	
+	function isEmpty(aValue) {
+		if (aValue == undefined)
+			return true;
+		else if (typeof aValue == "number") {
+			if (isNaN(aValue))
+				return true;
+			else
+				return false;
+		} else if (typeof aValue == "boolean")
+			return false;
+		else if (aValue == "" || aValue == sNull)
+			return true;
+		else
+			return false;
+	}
+	function getValue(aValue, aDefaultValue) {
+		aDefaultValue = (aDefaultValue === undefined) ? "" : aDefaultValue;
+		return isEmpty(aValue) ? aDefaultValue : aValue;
+	}
 
     dic['Oups, não lhe encontramos na lista. Vérifique seu nome e tente novamente.'] = 'Oups, nous ne vous trouvons pas dans la liste. Vérifiez l\'orthographe.';
     dic['Oups, houve um problema. Tente novamente.'] = 'Oups, il y a un problème. Essayer à nouveau.';
     dic['Aceitar com prazer'] = 'Oui, avec joie';
     dic['Recusar com pesar'] = 'Non, mais c\'est avec regret';
     dic['Crianças'] = 'Enfants';
+	
+   if (aText == null) 
+        return;
 
-    if (lang == "fr")
-        return dic[aText]
-    else
-        return aText;
+    return getValue(dic[aText],aText);
 }
 
 $(document).ready(function() {
