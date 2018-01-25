@@ -41,23 +41,32 @@ var search = function (aName) {
     }
 
     $.get('/users/search', getData, function (aRes) {
-        if (!aRes.err) {
-            obj = JSON.parse(aRes);
-        } else {
+		var response;
+		try {
+			response = JSON.parse(aRes);
+		} catch(e) {
+            delInfo();
+            arrUsers = [];
+			var output = '<div class="alert alert-danger fade in">' + _('Oups, houve um problema. Tente novamente.') + '<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a></div>';
+            $("#contact_results").append(output).slideDown();
+		}
+        if (response.err) {
             delInfo();
             arrUsers = [];
             var output = '<div class="alert alert-danger fade in">' + _('Oups, houve um problema. Tente novamente.') + '<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a></div>';
             $("#contact_results").append(output).slideDown();
-        }
+        } else {
+			obj = response;
+		}
     }).done(function () {
         if (obj.noObj) {
             delInfo();
             arrUsers = [];
             var output = '<div class="alert alert-danger fade in">' + _('Oups, não lhe encontramos na lista. Vérifique seu nome e tente novamente.') + '<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a></div>';
             $("#contact_results").append(output).slideDown();
-        } else
-            user = obj;
-
+        } else {
+            user = obj;			
+		}
         if (user && $('#user' + user.id+'Container').length == 0) {
             arrUsers = [];
             arrUsers.push(user);
